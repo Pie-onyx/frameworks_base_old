@@ -32,4 +32,12 @@
 
     <!-- True if the gesture service should be started at system start -->
     <bool name="config_enableGestureService">false</bool>
+
+    <!-- Flag indicating whether strict threshold is used, or lenient threshold is used,
+          when evaluating RSRP for LTE antenna bar display
+           0. Strict threshold
+           1. Lenient threshold
+    -->
+    <integer name="config_LTE_antenna_bar_quantity_metric">0</integer>
+    <integer name="config_LTE_RSRP_threshold_type">0</integer>
 </resources>
