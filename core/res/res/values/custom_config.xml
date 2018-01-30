@@ -45,6 +45,9 @@
          Represented as milliseconds from midnight (e.g. 21600000 == 6am). -->
     <integer name="config_defaultAmbientPlayQuitPeriodEndTime">21600000</integer>
 
+    <!-- Whether auto face unlock is enabled by default -->
+    <bool name="config_autoFaceUnlockEnabledByDefault">false</bool>
+
     <!-- Flag indicating whether strict threshold is used, or lenient threshold is used,
           when evaluating RSRP for LTE antenna bar display
            0. Strict threshold
