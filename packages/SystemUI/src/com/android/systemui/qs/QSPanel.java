@@ -728,4 +728,8 @@ public class QSPanel extends LinearLayout implements Tunable, Callback, Brightne
     public boolean isBrightnessViewBottom() {
         return mBrightnessBottom;
     }
+
+    public int getNumColumns() {
+        return mTileLayout.getNumColumns();
+    }
 }
