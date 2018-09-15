@@ -97,6 +97,8 @@ public class BatteryMeterView extends LinearLayout implements
 
     private int mBatteryPercentPadding;
     private boolean mShowBatteryImage;
+    private boolean mHideableByUser = true;
+    private boolean mVisibleByUser = true;
 
     public BatteryMeterView(Context context) {
         this(context, null, 0);
@@ -170,6 +172,11 @@ public class BatteryMeterView extends LinearLayout implements
         updateShowPercent();
     }
 
+    public void setHideableByUser(boolean value) {
+        mHideableByUser = value;
+        updateBatteryVisibility();
+    }
+
     /**
      * Sets whether the battery meter view uses the wallpaperTextColor. If we're not using it, we'll
      * revert back to dark-mode-based/tinted colors.
@@ -217,9 +224,15 @@ public class BatteryMeterView extends LinearLayout implements
     public void onTuningChanged(String key, String newValue) {
         if (StatusBarIconController.ICON_BLACKLIST.equals(key)) {
             ArraySet<String> icons = StatusBarIconController.getIconBlacklist(newValue);
-            boolean hidden = icons.contains(mSlotBattery);
-            Dependency.get(IconLogger.class).onIconVisibility(mSlotBattery, !hidden);
-            setVisibility(hidden ? View.GONE : View.VISIBLE);
+            mVisibleByUser = !icons.contains(mSlotBattery);
+            updateBatteryVisibility();
+        }
+    }
+
+    private void updateBatteryVisibility() {
+        if (mHideableByUser) {
+            Dependency.get(IconLogger.class).onIconVisibility(mSlotBattery, mVisibleByUser);
+            setVisibility(!mVisibleByUser ? View.GONE : View.VISIBLE);
         }
     }
 
