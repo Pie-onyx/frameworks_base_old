@@ -4186,6 +4186,15 @@ public final class Settings {
         /**
          * @hide
          */
+        public static final String OMNI_HIDE_NOTCH = "hide_notch";
+
+        /** @hide */
+        private static final Validator OMNI_HIDE_NOTCH_VALIDATOR =
+                BOOLEAN_VALIDATOR;
+
+        /**
+         * @hide
+         */
         public static final String OMNI_ADVANCED_REBOOT = "advanced_reboot";
 
         /** @hide */
@@ -4510,6 +4519,7 @@ public final class Settings {
             OMNI_DEVICE_FEATURE_SETTINGS,
             OMNI_NAVIGATION_BAR_SHOW,
             OMNI_USE_OLD_MOBILETYPE,
+            OMNI_HIDE_NOTCH,
             OMNI_ADVANCED_REBOOT,
             OMNI_USE_BOTTOM_GESTURE_NAVIGATION,
             OMNI_QS_LAYOUT_COLUMNS_LANDSCAPE,
@@ -4656,6 +4666,7 @@ public final class Settings {
             PRIVATE_SETTINGS.add(OMNI_DEVICE_FEATURE_SETTINGS);
             PRIVATE_SETTINGS.add(OMNI_NAVIGATION_BAR_SHOW);
             PRIVATE_SETTINGS.add(OMNI_USE_OLD_MOBILETYPE);
+            PRIVATE_SETTINGS.add(OMNI_HIDE_NOTCH);
             PRIVATE_SETTINGS.add(OMNI_ADVANCED_REBOOT);
             PRIVATE_SETTINGS.add(OMNI_USE_BOTTOM_GESTURE_NAVIGATION);
             PRIVATE_SETTINGS.add(OMNI_QS_LAYOUT_COLUMNS_LANDSCAPE);
@@ -4784,6 +4795,7 @@ public final class Settings {
                     OMNI_DEVICE_FEATURE_SETTINGS_VALIDATOR);
             VALIDATORS.put(OMNI_NAVIGATION_BAR_SHOW, OMNI_NAVIGATION_BAR_SHOW_VALIDATOR);
             VALIDATORS.put(OMNI_USE_OLD_MOBILETYPE, OMNI_USE_OLD_MOBILETYPE_VALIDATOR);
+            VALIDATORS.put(OMNI_HIDE_NOTCH, OMNI_HIDE_NOTCH_VALIDATOR);
             VALIDATORS.put(OMNI_ADVANCED_REBOOT, OMNI_ADVANCED_REBOOT_VALIDATOR);
             VALIDATORS.put(OMNI_USE_BOTTOM_GESTURE_NAVIGATION,
                     OMNI_USE_BOTTOM_GESTURE_NAVIGATION_VALIDATOR);
