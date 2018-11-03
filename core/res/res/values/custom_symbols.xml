@@ -88,4 +88,8 @@
 
   <java-symbol type="string" name="config_comboNetworkLocationProvider" />
 
+    <!-- Ambient play -->
+    <java-symbol type="string" name="ambient_recognition_notification" />
+    <java-symbol type="string" name="ambient_recognition_information" />
+
 </resources>
