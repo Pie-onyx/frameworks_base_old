@@ -217,6 +217,7 @@
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.RECORD_AUDIO"/>
     <uses-permission android:name="org.pixelexperience.ambient.play.history.MANAGE_HISTORY" />
+    <uses-permission android:name="org.pixelexperience.ambient.play.provider.MANAGE_DATA" />
 
     <!-- OmniJaws -->
     <uses-permission android:name="org.omnirom.omnijaws.READ_WEATHER" />
@@ -227,7 +228,6 @@
     <application
         android:name=".SystemUIApplication"
         android:persistent="true"
-        android:usesCleartextTraffic="true"
         android:allowClearUserData="false"
         android:allowBackup="false"
         android:hardwareAccelerated="true"
